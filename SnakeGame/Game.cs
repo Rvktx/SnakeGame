@@ -18,8 +18,7 @@ namespace SnakeGame
         }
         void Initialize()
         {
-            WindowWidth = 80;
-            WindowHeight = 40;
+            SetWindowSize(80, 40);
             CursorVisible = false;
 
             var fruit = new Pixel(rand.Next(1, WindowWidth - 2), rand.Next(1, WindowHeight - 2), ConsoleColor.Green);
@@ -78,9 +77,8 @@ namespace SnakeGame
                 Title = $"Score: {score}";
             }
 
-            SetCursorPosition(WindowWidth / 5, WindowHeight / 2);
+            SetCursorPosition(WindowWidth / 4, WindowHeight / 3);
             WriteLine($"Game over, Score: {score}");
-            SetCursorPosition(WindowWidth / 5, WindowHeight / 2 + 1);
             ReadKey();
         }
         static void DrawBorder()
